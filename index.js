@@ -25,7 +25,9 @@ let server = createServer(app)
 let _qr = 'invalid'
 let PORT = 3000 || 8000 || 8080
 
-//require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
+///
+require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
+///
 
 //libb
 const { TelegraPh } = require('./lib/uploader')
