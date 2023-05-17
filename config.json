@@ -20,7 +20,7 @@
     "japriOnly": false, 
     "antiDelete": false,
     "autobio": false,
-    "anticall": true,
+    "anticall": false,
     "autorespond": false,
     "autoblok212": true,
     "autoread": true,
