@@ -25,9 +25,7 @@ let server = createServer(app)
 let _qr = 'invalid'
 let PORT = 3000 || 8000 || 8080
 
-///
-require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
-///
+//require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
 
 //libb
 const { TelegraPh } = require('./lib/uploader')
@@ -185,7 +183,7 @@ app.use(express.static(path.join(__dirname, 'views')))
         if (!mek.message) return
         mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
         if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!haruka.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+        if (!haruka.false && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
         const m = smsg(haruka, mek, store)
         require("./command/case")(haruka, m, chatUpdate, mek, store, setting, isSetWelcome, getTextSetWelcome, set_welcome_db, set_left_db, isSetLeft, getTextSetLeft, _welcome, _left, antidelete, antionce)
@@ -295,7 +293,7 @@ app.use(express.static(path.join(__dirname, 'views')))
     }
     
 	  haruka.prefa = 'apasih'
-    haruka.public = true
+    haruka.public = false
     haruka.serializeM = (m) => smsg(haruka, m, store)
 
 
